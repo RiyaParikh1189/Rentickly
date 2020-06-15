@@ -1,68 +1,175 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Rentickly (Assignment - 2)
+This repository is to work on assignment for course CSCI5709.
 
-## Available Scripts
+* [Source Code](https://github.com/RiyaParikh1189/Rentickly)
+* [App  Link](https://myrentickly.herokuapp.com/)
 
-In the project directory, you can run:
+* Date Created: 08 JUN 2020
+* Last Modification Date: 14 JUN 2020
 
-### `npm start`
+# About Project
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The purpose of web application is to provide guidance and information to the people who are in the search of rental apartment. The application will be recognized as “Rentickly”. The Application will not only be helpful for the citizens, but it will be also useful for the new immigrants who are willing to move in the city and worried about searching an apartment. Users can rate the Apartments as per their experience and can also use chat forums to solve their query regarding the apartment.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Authors
 
-### `npm test`
+* [Riya Parikh - B00834638](Riya.Parikh@dal.ca)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In order to contribute to this project perform following setps on your system carefully.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+To have a local copy of  assignment up and running on your local machine, you will first need to install the following software and environment.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. [Node JS](https://nodejs.org/en/download/)
+2. [npm](https://www.npmjs.com/get-npm)
+3. [React Library](https://www.npmjs.com/package/create-react-app)
+4. [Code Editor](https://code.visualstudio.com/download)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Installing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Open terminal/ Command Prompt from project directory.
 
-## Learn More
+2. Install npm package using following command.
+```sh
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Install react libraries with the help of npm packet manager.
+```sh
+npm i -g create-react-app
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Run the application in development server and open `localhost:3000` in browser.
+ ```sh
+npm start
+```
 
-### Code Splitting
+5. To build application for Production Server, run following command.
+```sh
+npm run build
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Deployment
 
-### Analyzing the Bundle Size
+Used [Heroku](www.heroku.com) to deploy the web application.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Built With
 
-### Making a Progressive Web App
+- Cross-browser CSS with [LambdaTest](https://www.lambdatest.com/blog/how-to-make-a-cross-browser-compatible-website/)
+- Unit tests using [Jasmine](http://jasmine.github.io)
+- Static code analysis using [HTMLHint](http://htmlhint.com/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+## Typography
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- The application uses Segoe UI, Black and Regular font.
 
-### Deployment
+## Color Palatte
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Color palette of the application is primarily derived from w3school color.
 
-### `npm run build` fails to minify
+| UI Element | Color Code
+|------------|-----------
+| Backgroun color - Header   | #3c3c3c, #EEE
+| Background color - Content| #efefef
+| Font color | #000000
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+## Sources Used
+
+### app.js
+
+**Lines 66-73**
+
+```
+const menuBar = ['About Us','Our Products','Services','FAQ','Contact Us']
+    const menuItems = menuBar.map((val,index)=>{
+      return (
+        <MenuItem 
+          key={index} 
+          delay={`${index * 0.1}s`}
+          onClick={()=>{this.handleLinkClick();}}>{val}</MenuItem>)
+    });
+```
+The code above was created by adapting the code in [Codepen](ttps://codepen.io/naturalclar/pen/zEwvbg) as shown below: 
+
+```
+const menu = ['About Us','Our Products','Services','FAQ','Contact Us']
+      return (
+        <MenuItem 
+          key={index} 
+          onClick={()=>{this.handleLinkClick();}}>{val}</MenuItem>)
+    });
+```
+
+- The code in [Codepen](https://codepen.io/naturalclar/pen/zEwvbg
+) is used in the IDE of React to demonstrate use of responsive Hamburger Menu.
+- [Codepen](https://codepen.io/naturalclar/pen/zEwvbg
+)'s Code is used to implement responsive Hamburger Menu that modifies its behaviour according to screen size.
+- [Codepen](https://codepen.io/naturalclar/pen/zEwvbg
+)'s Code is modified to redirect in the web application. Moreover, the original code behaves same for all screen size, but I have changed that to work different for different screen size.
+
+### index.css
+
+**Lines 60-75**
+
+```
+.faqs .faq .faq-question::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 0px;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+
+	background-image: url('./arrow-down-mint.svg');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	transition: all 0.4s ease-out;
+}
+```
+The code above was created by adapting the concept from in [w3school](https://www.w3schools.com/css/) as shown below: 
+
+```
+.content {
+	position: absolute;
+	top: 50%;
+	right: 0px;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	background-position: center;
+
+	transition: all 0.4s ease-out;
+}
+```
+
+- The code in [w3school](https://www.w3schools.com/css/) is used in the example of Dialog component.
+- [w3school](https://www.w3schools.com/css/)'s Code is used to toggle question-answer in the faq page.
+- [w3school](https://www.w3schools.com/css/)'s Code is modified to display the toggle view. I have added background iamge and other property for better result.
+
+
+
+## References
+* [Form Validation](https://github.com/MyNameIsURL/react-form-validation-tutorial)
+* [Page Routing](https://github.com/MyNameIsURL/react-bootstrap-website)
+* [Hamburger Menu](https://codepen.io/naturalclar/pen/zEwvbg)
+
+
+
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
