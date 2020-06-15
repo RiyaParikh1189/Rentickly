@@ -13,6 +13,8 @@ import  Registration  from './Registration';
 import { NoMatch } from './NoMatch';
 import { Jumbotron } from './Jumbotron';
 import {FaqPage} from './FaqPage';
+import AdPosting from './AdPosting';
+import Post from './Post';
 
 import './SideDrawer.css';
 
@@ -63,7 +65,7 @@ export default class App extends React.Component {
           transition: 'filter 0.5s ease',
         },
       }
-    const menu = ['About Us','Our Products','Services','FAQ','Contact Us']
+    const menu = ['Profile','Favourites','Services','Contact Us','settings']
     const menuItems = menu.map((val,index)=>{
       return (
         <MenuItem 
@@ -81,22 +83,28 @@ export default class App extends React.Component {
         <Menu open={this.state.menuOpen}>
           {menuItems}
         </Menu>
-      <div className="main-content"> {/*navogation bar */}
+      <div > {/*navogation bar */}
       <React.Fragment>
         <Router>
+          <div className="NavBar">
           <NavigationBar />
+          </div>
           <Jumbotron/>
-          <Layout>
+          <div >
+          <Layout className="main-content">
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/register" component={Registration}/>
               <Route path="/FAQ" component={FaqPage} />
+              <Route path="/AdPosting" component={AdPosting} />
+              <Route path="/Post" component={Post}/>
                <Route component={NoMatch} />
+
             </Switch>
           </Layout>
-          
+          </div>
         </Router>
 
       </React.Fragment>

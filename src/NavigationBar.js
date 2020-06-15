@@ -2,55 +2,52 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
-
+import './NavigationBar.css';
 const Styles = styled.div`
+
   .navbar {
     background-color: #222;
-    
-  }
-
-  a, .navbar-brand{
-
-    color: #bbb;
-    float: left;
-    padding-top: 2px;
-    padding-left: 25px;
-    padding-bottom:5px;
-
-    &:hover {
-      color: white;
+    @media screen and (min-width: 415px){
+      .site-container {
+        display:flex;
+        flex-direction: row;
+      }
     }
   }
- .navbar-nav .nav-link {
-    color: #bbb;
-    float: right;
-    padding-top: 1px;
-    padding-bottom: 5px;
 
+.navbar-nav .nav-link {
+    color: black;
+    float: right;
+    padding-top: 2px;
+    padding-left:25px;
+    padding-bottom: 5px;
+    flex-direction:row;
     &:hover {
-      color: blue;
+      color: white;
     }
   }
 `;
 
 export const NavigationBar = () => (
   <Styles>
+    <div class name="wrapper">
+      <div class name="form-wrapper">
     <Navbar expand="lg">
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <Nav.Item>
             <Nav.Link>
-              <Link to="/">Home</Link>
+              <Link to="/AdPosting">AdPosting?</Link>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>
-              <Link to="/about">About</Link>
+              <Link to="/contact">ContactUS</Link>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/faq">FAQ</Link>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
@@ -60,11 +57,13 @@ export const NavigationBar = () => (
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>
-              <Link to="/FAQ">FAQ</Link>
+              <Link to="/">Home</Link>
             </Nav.Link>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+    </div>
+    </div>
   </Styles >
 )
